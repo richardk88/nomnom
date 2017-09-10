@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import axios from 'axios'
 import './App.css';
 
 class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      restaurants: []
+    }
+  }
+
+  componentWillMount(){
+    this._fetchRestaurantData();
+  }
+
+  _fetchRestaurantData = () => {
+    var config = {
+      headers: { 'Accept': 'application/json', 'user-key': '93f11aa4a12b9dd15322d3ee4c5163e9'}
+    };
+    axios.get('https://developers.zomato.com/api/v2.1/search', config).then(res => {
+    console.log(res.data)
+  });
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        
       </div>
     );
   }
