@@ -6,9 +6,10 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      yelpData: {},
+      fourSquareData: {},
       city: 'atlanta',
-      foodType: 'pizza'
+      foodType: 'pizza',
+      imgUrl: ''
     }
   }
 
@@ -18,12 +19,14 @@ class App extends Component {
 
   _fetchRestaurantData = async(e) => {
     // e.preventDefault();
-    // const apiKey = process.env.REACT_APP_API_KEY;
-    // const config = { headers: { 'Authorization': 'Bearer v7wDk7-ci5aJ-ppPztmzTz4gtCLuVc5CaPceDQTEnf2HoxPPP6yTkDBLKANVcGLNphfvIQq_e-pc-XRSSCf-IasS0TLdCaWMscI_t2SlkJxSp2ovaVuYso0RRwq2WXYx', 'Content-Type': 'application/jsonp'} };
+    const apiKeyId = process.env.REACT_APP_API_KEY_ID;
+    const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
+    
     try {
-      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&section=food&query=${this.state.foodType}&venuePhotos=1&client_id=HFGFZ2AIATCGL5KZVF5QX5Q1MNZVEFZ3YONA32U0SCEC4TC5&client_secret=QJYLDDYWIY3QBCBXOVPPCHNYCTMPHN41GFWREGJFTKA12W0D&v=20170913`);
-      await this.setState ({ yelpData: res.data.response.groups[0].items });
-      console.log(res.data.response.groups[0].items)
+      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&section=food&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`);
+      await this.setState ({ fourSquareData: res.data.response.groups[0].items, });
+      await this.setState({ imgUrl:`${this.state.fourSquareData[0].venue.featuredPhotos.items[0].prefix}712x712${this.state.fourSquareData[0].venue.featuredPhotos.items[0].suffix}`})
+      await console.log(this.state.imgUrl)
       return res.data.response.groups[0].items; 
     }
     catch(err) {
@@ -38,19 +41,23 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="App">
         <h1>NomNom</h1>
         <form onSubmit={this._fetchRestaurantData}>
-         <div>
-           <label htmlFor="city">Which city are you in?</label>
-           <input onChange={this._handleChange} type="text" name="city" value={this.state.city} />
-           <br />
-           <label htmlFor="foodType">What to eat?</label>
-           <input onChange={this._handleChange} type="text" name="foodType" value={this.state.foodType} />
-         </div>
-         <button>Searching</button>
-       </form>
+          <div>
+            <label htmlFor="city">Which city are you in?</label>
+            <input onChange={this._handleChange} type="text" name="city" value={this.state.city} />
+            <br />
+            <label htmlFor="foodType">What to eat?</label>
+            <input onChange={this._handleChange} type="text" name="foodType" value={this.state.foodType} />
+          </div>
+          <button>Searching</button>
+        </form>
+
+        <img src={this.state.imgUrl} />
+
       </div>
     );
   }
