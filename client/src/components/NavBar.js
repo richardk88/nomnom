@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 class NavBar extends Component {
     constructor() {
@@ -36,15 +37,15 @@ class NavBar extends Component {
         if (this.state.loggedIn) {
             return (
                 <Nav>
-                <Link to="/">
-                    <h1>Home</h1>
-                </Link>
-                <div>
-                    <span>Signed In As: {this.state.user.email}</span>
-                    <Link to='/new'>Add a new creature</Link>
-                    <a href="#" onClick={this._logOut}> Log Out </a>
-                </div>
-            </Nav>
+                    <Link to="/">
+                        <h1>Home</h1>
+                    </Link>
+                    <div>
+                        <span>Signed In As: {this.state.user.email}</span>
+                        <Link to='/new'>Add a new creature</Link>
+                        <a href="#" onClick={this._logOut}> Log Out </a>
+                    </div>
+                </Nav>
                 
             )
         }
