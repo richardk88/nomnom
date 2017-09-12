@@ -6,6 +6,7 @@ class NavBar extends Component {
         return (
             <div>
                 <Link to='/signUp'>Sign Up</Link>
+                <Link to='/signIn'>Sign In</Link>
             </div>
         );
     }
