@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import RestaurantList from './RestaurantList'
 
 class HomePage extends Component {
