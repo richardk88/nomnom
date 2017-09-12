@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    // setAxiosDefaults()
+    setAxiosDefaults()
     // this._setDefaultRestaurantData();
   }
 
