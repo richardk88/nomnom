@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       fourSquareData: [],
       city: 'atlanta',
-      foodType: 'tacos'
+      foodType: 'korean'
     }
   }
 
@@ -26,12 +26,12 @@ class App extends Component {
   }
 
   _setDefaultRestaurantData = async(e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const apiKeyId = process.env.REACT_APP_API_KEY_ID;
     const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
     
     try {
-      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`,  { transformRequest: [(data, headers) => {
+      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`, { transformRequest: [(data, headers) => {
         delete headers['access-token']
         delete headers['uid']
         delete headers['client']
