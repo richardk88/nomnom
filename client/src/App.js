@@ -40,9 +40,11 @@ class App extends Component {
 
   render() {
     const restaurantList = this.state.fourSquareData.map((restaurant, i) => {
+      console.log(restaurant.venue.name)
+      // const test = restaurant[0].venue.name
       return (
         <div key={i}>
-          Hi
+          <h1>{restaurant.venue.name}</h1>
         </div>
       )
     });
