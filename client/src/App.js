@@ -41,9 +41,10 @@ class App extends Component {
   render() {
     const restaurantList = this.state.fourSquareData.map((restaurant, i) => {
       console.log(restaurant.venue.name)
-      // const test = restaurant[0].venue.name
+      const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}712x512${restaurant.venue.featuredPhotos.items[0].suffix}`
       return (
         <div key={i}>
+          <img src={restaurantImg} alt={restaurant.venue.name}/>
           <h1>{restaurant.venue.name}</h1>
         </div>
       )
