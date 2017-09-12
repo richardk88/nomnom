@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'
 import './App.css';
 import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RestaurantShow from './components/RestaurantShow'
@@ -57,6 +58,7 @@ class App extends Component {
           />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
           <Route exact path='/signUp' component={SignUp} />
+          <Route exact path='/signIn' component={SignIn} />
         </div>
       </Router>
     );
