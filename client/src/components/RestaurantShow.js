@@ -10,12 +10,15 @@ class RestaurantShow extends Component {
                 phoneNumber: '',
                 address: '',
                 url: '',
-                rating: ......,
-                hours: ......,
+                rating: [],
+                hours: [],
                 description: ''
             }
         }
     }
+
+    _fetch
+
     render() {
         return (
             <div>
