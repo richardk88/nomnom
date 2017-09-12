@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'
 import './App.css';
+import SignUp from './components/SignUp'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RestaurantShow from './components/RestaurantShow'
@@ -55,6 +56,7 @@ class App extends Component {
             <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange}/>}
           />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
+          <Route exact path='/signUp' component={SignUp} />
         </div>
       </Router>
     );
