@@ -55,7 +55,7 @@ class HomePage extends Component {
                     <button>Searching</button>
                 </form>
 
-                <RestaurantList />     
+                <RestaurantList fourSquareData={this.state.fourSquareData}/>     
             </div>
         );
     }
