@@ -23,10 +23,9 @@ class App extends Component {
     
     try {
       const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`);
-      await this.setState ({ fourSquareData: res.data});
-      // await this.setState({ imgUrl:`${this.state.fourSquareData[0].venue.featuredPhotos.items[0].prefix}812x512${this.state.fourSquareData[0].venue.featuredPhotos.items[0].suffix}`})
-      await console.log(res.data)
-      return res.data; 
+      await this.setState ({ fourSquareData: res.data.response.groups[0].items});
+      console.log(res.data.response.groups[0].items)
+      return res.data.response.groups[0].items; 
     }
     catch(err) {
       console.log(err)
@@ -40,7 +39,14 @@ class App extends Component {
   }
 
   render() {
-
+    const restaurantList = this.state.fourSquareData.map((restaurant, i) => {
+      return (
+        <div key={i}>
+          Hi
+        </div>
+      )
+    });
+    
     return (
       <div className="App">
         <h1>NomNom</h1>
@@ -55,9 +61,7 @@ class App extends Component {
           <button>Searching</button>
         </form>
 
-        {/* {this.state.fourSquareData.map((data) => {
-          {data.name}
-        })} */}
+        {restaurantList}        
 
       </div>
     );
