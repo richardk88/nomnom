@@ -6,28 +6,27 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      fourSquareData: {},
-      city: 'atlanta',
-      foodType: 'pizza',
-      imgUrl: ''
+      fourSquareData: [],
+      city: '',
+      foodType: ''
     }
   }
 
   componentWillMount(){
-    this._fetchRestaurantData();
+    // this._fetchRestaurantData();
   }
 
   _fetchRestaurantData = async(e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const apiKeyId = process.env.REACT_APP_API_KEY_ID;
     const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
     
     try {
-      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&section=food&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`);
-      await this.setState ({ fourSquareData: res.data.response.groups[0].items, });
-      await this.setState({ imgUrl:`${this.state.fourSquareData[0].venue.featuredPhotos.items[0].prefix}712x712${this.state.fourSquareData[0].venue.featuredPhotos.items[0].suffix}`})
-      await console.log(this.state.imgUrl)
-      return res.data.response.groups[0].items; 
+      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`);
+      await this.setState ({ fourSquareData: res.data});
+      // await this.setState({ imgUrl:`${this.state.fourSquareData[0].venue.featuredPhotos.items[0].prefix}812x512${this.state.fourSquareData[0].venue.featuredPhotos.items[0].suffix}`})
+      await console.log(res.data)
+      return res.data; 
     }
     catch(err) {
       console.log(err)
@@ -41,7 +40,7 @@ class App extends Component {
   }
 
   render() {
-    
+
     return (
       <div className="App">
         <h1>NomNom</h1>
@@ -56,7 +55,9 @@ class App extends Component {
           <button>Searching</button>
         </form>
 
-        <img src={this.state.imgUrl} />
+        {/* {this.state.fourSquareData.map((data) => {
+          {data.name}
+        })} */}
 
       </div>
     );
