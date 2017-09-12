@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios'
 import './App.css';
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
@@ -50,7 +51,9 @@ class App extends Component {
         <div className="App">
           <NavBar />
           
-          <Route exact path='/' component={HomePage} />
+          <Route exact path = '/'  render={routeProps => 
+            <HomePage {...routeProps} restaurants= {this.state.fourSquareData}/>}
+          />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
         </div>
       </Router>
