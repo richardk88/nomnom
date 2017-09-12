@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 class RestaurantList extends Component {
     render() {
 
-        const restaurantList = this.props.fourSquareData.map((restaurant, i) => {
+        const restaurantList = this.props.restaurants.map((restaurant, i) => {
             const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}712x512${restaurant.venue.featuredPhotos.items[0].suffix}`
             return (
                 <div key={i}>

@@ -11,15 +11,15 @@ class HomePage extends Component {
                 <form onSubmit={this._fetchRestaurantData}>
                     <div>
                         <label htmlFor="city">Which city are you in?</label>
-                        <input onChange={this._handleChange} type="text" name="city" value={this.state.city} />
+                        <input onChange={this.props._handleChange} type="text" name="city" value={this.props.city} />
                         <br />
                         <label htmlFor="foodType">What to eat?</label>
-                        <input onChange={this._handleChange} type="text" name="foodType" value={this.state.foodType} />
+                        <input onChange={this.props._handleChange} type="text" name="foodType" value={this.props.foodType} />
                     </div>
                     <button>EAT</button>
                 </form>
 
-                <RestaurantList fourSquareData={this.state.fourSquareData}/>     
+                <RestaurantList restaurants={this.props.restaurants}/>     
             </div>
         );
     }
