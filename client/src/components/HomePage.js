@@ -52,7 +52,7 @@ class HomePage extends Component {
                         <label htmlFor="foodType">What to eat?</label>
                         <input onChange={this._handleChange} type="text" name="foodType" value={this.state.foodType} />
                     </div>
-                    <button>Searching</button>
+                    <button>EAT</button>
                 </form>
 
                 <RestaurantList fourSquareData={this.state.fourSquareData}/>     
