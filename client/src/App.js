@@ -7,7 +7,7 @@ import SignIn from './components/SignIn'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RestaurantShow from './components/RestaurantShow'
-
+import {setAxiosDefaults} from './util'
 
 class App extends Component {
 
