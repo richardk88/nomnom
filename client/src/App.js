@@ -19,10 +19,10 @@ class App extends Component {
   }
 
   componentWillMount(){
-    // this._fetchRestaurantData();
+    // this._setDefaultRestaurantData();
   }
 
-  _fetchRestaurantData = async(e) => {
+  _setDefaultRestaurantData = async(e) => {
     e.preventDefault();
     const apiKeyId = process.env.REACT_APP_API_KEY_ID;
     const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
@@ -52,7 +52,7 @@ class App extends Component {
           <NavBar />
           
           <Route exact path = '/'  render={routeProps => 
-            <HomePage {...routeProps} restaurants= {this.state.fourSquareData}/>}
+            <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange}/>}
           />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
         </div>
