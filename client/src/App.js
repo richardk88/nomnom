@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    setAxiosDefaults()
+    // setAxiosDefaults()
     // this._setDefaultRestaurantData();
   }
 
@@ -54,9 +54,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           
-          <Route exact path = '/'  render={routeProps => 
-            <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange}/>}
-          />
+          <Route exact path = '/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange}/>} />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
           <Route exact path='/signUp' component={SignUp} />
           <Route exact path='/signIn' component={SignIn} />
