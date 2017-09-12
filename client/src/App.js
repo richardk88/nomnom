@@ -31,7 +31,16 @@ class App extends Component {
     const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
     
     try {
-      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`);
+      const res = await axios.get(`https://api.foursquare.com/v2/venues/explore/?near=${this.state.city}&query=${this.state.foodType}&venuePhotos=1&client_id=${apiKeyId}&client_secret=${apiKeySecret}`,  { transformRequest: [(data, headers) => {
+        delete headers['access-token']
+        delete headers['uid']
+        delete headers['client']
+        delete headers['expiry']
+        delete headers['token-type']
+        delete headers.common
+        return data;
+      }]
+    });
       await this.setState ({ fourSquareData: res.data.response.groups[0].items});
       console.log(res.data.response.groups[0].items)
       return res.data.response.groups[0].items; 
