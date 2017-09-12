@@ -15,14 +15,14 @@ class App extends Component {
     super();
     this.state = {
       fourSquareData: [],
-      city: '',
-      foodType: ''
+      city: 'atlanta',
+      foodType: 'tacos'
     }
   }
 
   componentWillMount(){
     setAxiosDefaults()
-    // this._setDefaultRestaurantData();
+    this._setDefaultRestaurantData();
   }
 
   _setDefaultRestaurantData = async(e) => {
