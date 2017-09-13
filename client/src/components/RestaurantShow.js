@@ -29,12 +29,12 @@ class RestaurantShow extends Component {
                     return data;
                 }]
             });
-            let hours = ""
-            if (res.data.response.venue.popular.status){
-                hours = res.data.response.venue.popular.status;
-            } else if (res.data.response.venue.hours.status){
-                hours = res.data.response.venue.hours.status
-            } 
+            // let hours = ""
+            // if (res.data.response.venue.popular.status){
+            //     hours = res.data.response.venue.popular.status;
+            // } else if (res.data.response.venue.hours.status){
+            //     hours = res.data.response.venue.hours.status
+            // } 
 
             await this.setState ({ fourSquareData: {
                 featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}720x431${res.data.response.venue.bestPhoto.suffix}`,
@@ -43,7 +43,7 @@ class RestaurantShow extends Component {
                 address: res.data.response.venue.location.formattedAddress,
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
-                hours,
+                // hours,
                 price: res.data.response.venue.attributes.groups[0].summary,
                 menu: res.data.response.venue.menu.url 
             }});
@@ -65,7 +65,7 @@ class RestaurantShow extends Component {
                 <p>{restaurant.phoneNumber}</p>
                 <p>{restaurant.address}</p>
                 <p><strong>Rating: </strong>{restaurant.rating}/10</p>
-                <p><strong>Hours: </strong>{restaurant.hours}</p>
+                {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
                 <a href={restaurant.menu} target='blank'>Menu </a>
                 <br/>
                 <a href={restaurant.url} target='blank'> Website</a>
