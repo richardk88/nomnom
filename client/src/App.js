@@ -8,6 +8,8 @@ import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RestaurantShow from './components/RestaurantShow'
 import FavoriteList from './components/FavoriteList'
+import Profile from './components/Profile'
+import ProfileEdit from './components/ProfileEdit'
 import {setAxiosDefaults} from './util'
 
 class App extends Component {
@@ -69,6 +71,8 @@ class App extends Component {
           <Route exact path='/signUp' component={SignUp} />
           <Route exact path='/signIn' component={SignIn} />
           <Route exact path='/favorites' component={FavoriteList} />
+          <Route exact path='/profile' component={Profile} />
+          <Route exact path='/profile/edit' component={ProfileEdit} />
         </div>
       </Router>
     );
