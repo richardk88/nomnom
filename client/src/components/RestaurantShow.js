@@ -47,8 +47,8 @@ class RestaurantShow extends Component {
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
                 hours: res.data.response.venue.popular.isOpen,
-                price: res.data.response.venue.price.currency
-                // description: 
+                price: res.data.response.venue.price.currency,
+                menu: res.data.response.venue.menu.url 
             }});
           console.log(this.state.fourSquareData)
           return res.data  
@@ -69,8 +69,9 @@ class RestaurantShow extends Component {
                 <p>{restaurant.address}</p>
                 <p><strong>Rating: </strong>{restaurant.rating}</p>
                 <p><strong>Hours: </strong>{restaurant.hours}</p>
-                <p>{restaurant.description}</p>
-                <a href={restaurant.url} target='blank'>More Info</a>
+                <a href={restaurant.menu} target='blank'>Menu </a>
+                <br/>
+                <a href={restaurant.url} target='blank'> Website</a>
             </div>
         );
     }
