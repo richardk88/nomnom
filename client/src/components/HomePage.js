@@ -19,7 +19,7 @@ class HomePage extends Component {
                     <button>EAT</button>
                 </form>
 
-                <RestaurantList restaurants={this.props.restaurants}/>     
+                <RestaurantList restaurants={this.props.restaurants} />     
             </div>
         );
     }

@@ -16,7 +16,8 @@ class App extends Component {
     this.state = {
       fourSquareData: [],
       city: 'atlanta',
-      foodType: 'korean'
+      foodType: 'korean',
+      showUrl: ''
     }
   }
 
@@ -63,7 +64,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           
-          <Route exact path = '/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange}/>} />
+          <Route exact path = '/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange} />} />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
           <Route exact path='/signUp' component={SignUp} />
           <Route exact path='/signIn' component={SignIn} />

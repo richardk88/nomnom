@@ -14,11 +14,12 @@ const Container = styled.div`
 class RestaurantList extends Component {
     render() {
 
+
         const restaurantList = this.props.restaurants.map((restaurant, i) => {
             const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}412x312${restaurant.venue.featuredPhotos.items[0].suffix}`
             return (
                 <div key={i}>
-                    <Link to={`/restaurants/${restaurant.id}`}>
+                    <Link to={`/restaurants/${restaurant.venue.id}`}>
                         <img src={restaurantImg} alt={restaurant.venue.name}/>
                         <h1>{restaurant.venue.name}</h1>
                     </Link>
