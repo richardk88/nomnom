@@ -16,8 +16,7 @@ class App extends Component {
     this.state = {
       fourSquareData: [],
       city: 'atlanta',
-      foodType: 'korean',
-      showUrl: ''
+      foodType: 'ice cream'
     }
   }
 
