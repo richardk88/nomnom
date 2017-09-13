@@ -12,7 +12,7 @@ class RestaurantShow extends Component {
                 address: '',
                 url: '',
                 rating: '',
-                hours: '',
+                hours: {},
                 description: '',
                 price: ''
             }
@@ -39,6 +39,7 @@ class RestaurantShow extends Component {
                     return data;
                 }]
             });
+            
             await this.setState ({ fourSquareData: {
                 featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}720x431${res.data.response.venue.bestPhoto.suffix}`,
                 name: res.data.response.venue.name,
@@ -46,10 +47,11 @@ class RestaurantShow extends Component {
                 address: res.data.response.venue.location.formattedAddress,
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
-                hours: res.data.response.venue.hours.status,
+                hours: res.data.response.venue.hours,
                 price: res.data.response.venue.price.currency,
                 menu: res.data.response.venue.menu.url 
             }});
+            console.log(this.state.fourSquareData.hours)
           console.log(this.state.fourSquareData)
           return res.data  
         }
@@ -60,6 +62,7 @@ class RestaurantShow extends Component {
 
     render() {
         const restaurant = this.state.fourSquareData
+        console.log(restaurant.hours)
         return (
             <div>
                 <img src={restaurant.featuredPhoto} alt=''/>
@@ -68,7 +71,7 @@ class RestaurantShow extends Component {
                 <p>{restaurant.phoneNumber}</p>
                 <p>{restaurant.address}</p>
                 <p><strong>Rating: </strong>{restaurant.rating}/10</p>
-                <p><strong>Hours: </strong>{restaurant.hours}</p>
+                {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
                 <a href={restaurant.menu} target='blank'>Menu </a>
                 <br/>
                 <a href={restaurant.url} target='blank'> Website</a>
