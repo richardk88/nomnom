@@ -44,7 +44,7 @@ class RestaurantShow extends Component {
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
                 hours,
-                price: res.data.response.venue.price.currency,
+                price: res.data.response.venue.attributes.groups[0].summary,
                 menu: res.data.response.venue.menu.url 
             }});
             console.log(this.state.fourSquareData.hours)
