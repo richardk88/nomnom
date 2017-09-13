@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components'
+
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+        margin: 5px;
+    }
+`
 
 class RestaurantList extends Component {
     render() {
 
         const restaurantList = this.props.restaurants.map((restaurant, i) => {
-            const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}712x512${restaurant.venue.featuredPhotos.items[0].suffix}`
+            const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}412x312${restaurant.venue.featuredPhotos.items[0].suffix}`
             return (
                 <div key={i}>
                     <Link to={`/restaurants/${restaurant.id}`}>
@@ -17,9 +27,9 @@ class RestaurantList extends Component {
         });
 
         return (
-            <div>
+            <Container>
                 {restaurantList}
-            </div>
+            </Container>
         );
     }
 }
