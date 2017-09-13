@@ -60,7 +60,7 @@ class NavBar extends Component {
                     </Link>
                     <div>
                         <span>Signed In As: {this.state.user.email}</span>
-                        <a href="#" onClick={this._logOut}> Log Out </a>
+                        <a href="" onClick={this._logOut}> Log Out </a>
                     </div>
                 </Nav>
                 

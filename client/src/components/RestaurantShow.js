@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios'
 
 class RestaurantShow extends Component {
@@ -48,7 +47,7 @@ class RestaurantShow extends Component {
                 url: res.data.response.venue.shortUrl,
                 rating: res.data.response.venue.rating,
                 hours: res.data.response.venue.popular.isOpen,
-                price: res.data.response.venue.price.currency,
+                price: res.data.response.venue.price.currency
                 // description: 
             }});
           console.log(this.state.fourSquareData)
@@ -63,7 +62,7 @@ class RestaurantShow extends Component {
         const restaurant = this.state.fourSquareData
         return (
             <div>
-                <img src={restaurant.featuredPhoto}/>
+                <img src={restaurant.featuredPhoto} alt=''/>
                 <h1>{restaurant.name}</h1> 
                 <p><strong>Price: </strong>{restaurant.price}</p>
                 <p>{restaurant.phoneNumber}</p>
