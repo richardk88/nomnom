@@ -56,7 +56,7 @@ class NavBar extends Component {
             return (
                 <Nav>
                     <Link to="/">
-                        <h1>Home</h1>
+                        <h1>Nom Nom</h1>
                     </Link>
                     <div>
                         {/* <span>Signed In As: {this.state.user.email}</span> */}
@@ -70,7 +70,7 @@ class NavBar extends Component {
         return (
         <Nav>
             <Link to="/">
-              <h1>Home</h1>
+              <h1>Nom Nom</h1>
             </Link>
             <div>
               <Link to="/signup">Sign Up</Link>
