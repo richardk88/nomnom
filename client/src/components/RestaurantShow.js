@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios'
 
 class RestaurantShow extends Component {
@@ -69,6 +70,8 @@ class RestaurantShow extends Component {
                 <a href={restaurant.menu} target='blank'>Menu </a>
                 <br/>
                 <a href={restaurant.url} target='blank'> Website</a>
+                <button onClick={this._addRestaurantToFavorites}>Add to Favorites</button>
+                <Link to={`/`}><button>Back</button></Link>
             </div>
         );
     }
