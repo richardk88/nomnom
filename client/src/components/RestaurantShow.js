@@ -44,7 +44,7 @@ class RestaurantShow extends Component {
                 name: res.data.response.venue.name,
                 phoneNumber: res.data.response.venue.contact.formattedPhone,
                 address: res.data.response.venue.location.formattedAddress,
-                url: res.data.response.venue.shortUrl,
+                url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
                 hours: res.data.response.venue.popular.isOpen,
                 price: res.data.response.venue.price.currency

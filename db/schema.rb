@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170912233904) do
     t.string "featuredPhoto"
     t.string "address"
     t.string "hours"
-    t.string "phone"
+    t.string "phoneNumber"
     t.string "url"
     t.string "price"
     t.string "rating"

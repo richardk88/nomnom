@@ -2,6 +2,7 @@ class Api::FavoritesController < ApplicationController
     before_action :authenticate_user!
 
     def index
+        @user = current_user
         @favorites = Favorite.all
         render json: @favorites 
     end
@@ -13,5 +14,6 @@ class Api::FavoritesController < ApplicationController
     end
 
     def destroy
+        
     end
 end
