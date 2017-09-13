@@ -70,8 +70,10 @@ class RestaurantShow extends Component {
                 <a href={restaurant.menu} target='blank'>Menu </a>
                 <br/>
                 <a href={restaurant.url} target='blank'> Website</a>
-                <button onClick={this._addRestaurantToFavorites}>Add to Favorites</button>
-                <Link to={`/`}><button>Back</button></Link>
+                <div>
+                    <button onClick={this._addRestaurantToFavorites}>Add to Favorites</button>
+                    <Link to={`/`}><button>Back</button></Link>
+                </div>
             </div>
         );
     }

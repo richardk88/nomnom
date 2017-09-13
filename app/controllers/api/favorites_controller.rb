@@ -3,36 +3,24 @@ class Api::FavoritesController < ApplicationController
 
     def index
         @user = User.find(current_user.id)
-        @favoriteList = @user.favorites
-        render json: @favoriteList
+        @favorites = @user.favorites
+        render json: @favorites
     end
 
     def show
-        @favoriteList = Favorite.find params[:id]
-        @restaurant = @favoriteList.restaurants
-        render json: {
-            favoriteList: @favoriteList,
-            restaurant: @restaurants
-        }
+        @favorites = Favorite.find params[:id]
+        @restaurant = @favorites.restaurants
+        render json: @restaurants
     end 
 
     def create
-        @user = User.find(current_user.id)
-        @user.favoriteList.create!( favoriteList_params)
-    end
-
-    def update
-        @favoriteList = Favorite.find params[:id]
-        @favoriteList.update!(favoriteList_params)
+        userId = User.find(current_user.id)
+        restaurantId = Restaurant.find params[:restaurant_id]
+        @favorite = Favorite.create!(userId: userId, restaurantId: restaurantId)
     end
 
     def destroy
-        @favoriteList = Favorite.find params[:id]
-        @favoriteList.destroy
-    end
-
-    private
-    def favoriteList_params
-        params.require(:favoriteList).permit(:user_id)
+        @favorite = Favorite.find params[:id]
+        @favorite.destroy
     end
 end
