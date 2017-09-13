@@ -46,7 +46,7 @@ class RestaurantShow extends Component {
                 address: res.data.response.venue.location.formattedAddress,
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
-                hours: res.data.response.venue.popular.isOpen,
+                hours: res.data.response.venue.hours.status,
                 price: res.data.response.venue.price.currency,
                 menu: res.data.response.venue.menu.url 
             }});
@@ -67,7 +67,7 @@ class RestaurantShow extends Component {
                 <p><strong>Price: </strong>{restaurant.price}</p>
                 <p>{restaurant.phoneNumber}</p>
                 <p>{restaurant.address}</p>
-                <p><strong>Rating: </strong>{restaurant.rating}</p>
+                <p><strong>Rating: </strong>{restaurant.rating}/10</p>
                 <p><strong>Hours: </strong>{restaurant.hours}</p>
                 <a href={restaurant.menu} target='blank'>Menu </a>
                 <br/>
