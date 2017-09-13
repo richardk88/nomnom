@@ -59,7 +59,8 @@ class NavBar extends Component {
                         <h1>Home</h1>
                     </Link>
                     <div>
-                        <span>Signed In As: {this.state.user.email}</span>
+                        {/* <span>Signed In As: {this.state.user.email}</span> */}
+                        <a href="/profile"> {this.state.user.email} </a>
                         <a href="" onClick={this._logOut}> Log Out </a>
                     </div>
                 </Nav>
