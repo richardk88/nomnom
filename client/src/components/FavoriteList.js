@@ -4,6 +4,7 @@ class FavoriteList extends Component {
     render() {
         return (
             <div>
+                <h1>Favorite List</h1>
                 
             </div>
         );

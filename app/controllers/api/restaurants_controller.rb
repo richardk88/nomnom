@@ -1,10 +1,19 @@
 class Api::RestaurantsController < ApplicationController
     before_action :authenticate_user!
     
-    def index
-        @user = current_user
-        @creatures = @owner.creatures.all
-        render json: @creatures
+    def show
+        @restaurant = Restaurant.find params[:id]
+        render json: @restaurant
+    end
+
+    def create
+        @favorite_list = Favorites.find params[:id]
+        @favorite_list.restaurant.create(restaurant_params)
+    end
+
+    def destroy
+        @restaurant = Restaurant.find params[:id]
+        @restaurant.destroy
     end
 
     private
