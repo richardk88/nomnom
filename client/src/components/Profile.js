@@ -37,7 +37,7 @@ class Profile extends Component {
                 <br />
 
                 <div>
-                    <Link to={`/user/${this.state.user_id}`}><button>Edit Profile</button></Link>
+                    <Link to={`/user/${user.id}/edit`}><button>Edit Profile</button></Link>
                     <Link to={`/`}><button>Back</button></Link>
                 </div>
             </div>
