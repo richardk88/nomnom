@@ -3,14 +3,14 @@ class Api::FavoritesController < ApplicationController
 
     def index
         # @user = current_user
-        # @favorites = @user.favorites
-        # render json: @favorites
+        # @favorite = @user.favorite
+        # render json: @favorite
     end
 
     def show
-        # @favorites = Favorite.find params[:id]
-        # @restaurant = @favorites.restaurants
-        # render json: @restaurants
+        # @favorite = Favorite.find params[:id]
+        # @restaurant = @favorite.restaurants
+        # render json: @restaurant
     end 
 
     def create

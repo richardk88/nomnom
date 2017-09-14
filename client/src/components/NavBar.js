@@ -48,7 +48,7 @@ class NavBar extends Component {
         console.log("CLICK");
         const response = await axios.delete("/auth/sign_out");
         //Forces refresh of browser
-        window.location.reload();
+        // window.location.reload();
       };
     
         render(){
@@ -60,7 +60,7 @@ class NavBar extends Component {
                     </Link>
                     <div>
                         <a href={`/user/${this.state.user.id}`}> {this.state.user.nickname} </a>
-                        <a href="" onClick={this._logOut}> Log Out </a>
+                        <a href="/" onClick={this._logOut}> Log Out </a>
                     </div>
                 </Nav>
                 
