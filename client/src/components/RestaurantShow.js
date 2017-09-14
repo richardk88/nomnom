@@ -29,7 +29,7 @@ class RestaurantShow extends Component {
         const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
 
         try {
-            const res = await axios.get(`https://api.foursquare.com/v2/venues/${this.props.match.params.id}/?client_id=${apiKeyId}&client_secret=${apiKeySecret}`, { 
+            const res = await axios.get(`https://api.foursquare.com/v2/venues/${this.props.match.params.id}/?client_id=${apiKeyId}&client_secret=${apiKeySecret}&v=20170913`, { 
                 transformRequest: [(data, headers) => {
                     delete headers['access-token']
                     delete headers['uid']
