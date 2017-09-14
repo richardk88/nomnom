@@ -59,7 +59,7 @@ class NavBar extends Component {
                         <h1>Nom Nom</h1>
                     </Link>
                     <div>
-                        <a href={`/user/${this.state.user.id}`}> {this.state.user.email} </a>
+                        <a href={`/user/${this.state.user.id}`}> {this.state.user.nickname} </a>
                         <a href="" onClick={this._logOut}> Log Out </a>
                     </div>
                 </Nav>
