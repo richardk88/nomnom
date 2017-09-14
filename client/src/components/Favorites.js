@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import FavoriteDelete from './FavoriteDelete'
 
 class Favorites extends Component {
     constructor(){
@@ -22,18 +23,16 @@ class Favorites extends Component {
         return res.data
     }
 
-    _deleteRestaurant = () => {
-
-    }
-
     render() {
         return (
             <div>
                 <h1>Favorite List</h1>
                 {this.state.favorites.map((favorite,i) => {
-                    return <div key={i}>
-                            {favorite.name}
+                    return (<div key={i}>
+                            <img src={favorite.featuredPhoto} />
+                            <FavoriteDelete favorite={favorite.id}/>
                            </div>
+                    )
                 })}
             </div>
         );

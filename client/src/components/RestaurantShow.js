@@ -70,7 +70,6 @@ class RestaurantShow extends Component {
                 menu: res.data.response.venue.menu.url,
                 venue_id: res.data.response.venue.id 
             }});
-            console.log(this.state.fourSquareData.hours)
           return res.data  
         }
         catch(err) {
@@ -96,12 +95,6 @@ class RestaurantShow extends Component {
       }
 
     render() {
-        const payload = {
-            featuredPhoto:this.state.fourSquareData.featuredPhoto,
-            venue_id: this.state.fourSquareData.venue_id,
-            name: this.state.fourSquareData.name
-        }
-        console.log(payload)
         const restaurant = this.state.fourSquareData
         return (
             <div>
