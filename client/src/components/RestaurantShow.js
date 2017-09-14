@@ -6,6 +6,7 @@ class RestaurantShow extends Component {
     constructor(){
         super();
         this.state = {
+            user: {},
             fourSquareData: {
                 featuredPhoto: '',
                 name: '',
@@ -16,12 +17,22 @@ class RestaurantShow extends Component {
                 price: '',
                 menu: '',
                 venue_id: ''
-            }
+            },
+            redirect: false
         }
     }
 
     componentWillMount(){
+        this._fetchUser();
         this._fetchRestaurantData();
+      }
+
+      _fetchUser = async() => {
+          const res = await axios.get(`/api/users`)
+          console.log(res.data)
+          this.setState({
+              user:res.data
+          })
       }
     
       _fetchRestaurantData = async() => {
@@ -76,6 +87,7 @@ class RestaurantShow extends Component {
         }
         try {
             const res = await axios.post(`/api/restaurants`, payload)
+            await this.setState({redirect: true})
             return res.data
         }
         catch(err){
@@ -104,7 +116,7 @@ class RestaurantShow extends Component {
                 <br/>
                 <a href={restaurant.url} target='blank'> Website</a>
                 <div>
-                    <button onClick={this._addRestaurantToFavorites}>Add to Favorites</button>
+                    <Link to={`/user/${this.state.user.id}/favorites`}><button onClick={this._addRestaurantToFavorites}>Add to Favorites</button></Link>
                     <Link to={`/`}><button>Back</button></Link>
                 </div>
             </div>

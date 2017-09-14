@@ -1,9 +1,9 @@
 class Api::FavoritesController < ApplicationController
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
 
     def index
-        # @user = current_user
-        # @favorite = @user.favorite
+        # @user = User.find_by params[:id]
+        # @favorite = @user.favorite.restaurants
         # render json: @favorite
     end
 

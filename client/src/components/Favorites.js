@@ -14,23 +14,27 @@ class Favorites extends Component {
     }
 
     _fetchFavorites = async() => {
-        const res = axios.get(`/api/favorites`)
+        const res = await axios.get(`/api/restaurants`)
         this.setState({
             favorites: res.data
-        })
+        })  
+        console.log(res.data)
         return res.data
     }
 
-    _deleteRestaurant = (e) => {
-        e.preventDefault();
-        // const id = this.
+    _deleteRestaurant = () => {
+
     }
 
     render() {
         return (
             <div>
                 <h1>Favorite List</h1>
-
+                {this.state.favorites.map((favorite,i) => {
+                    return <div key={i}>
+                            {favorite.name}
+                           </div>
+                })}
             </div>
         );
     }
