@@ -47,6 +47,24 @@ class ProfileEdit extends Component {
         this.setState({user});
     }
 
+    _deleteProfile = async() => {
+        try {
+            const res = await axios.delete(`/auth`)
+            this._logOut();
+            return res.data
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+    _logOut = async () => {
+        console.log("CLICK");
+        const response = await axios.delete("/auth/sign_out");
+        //Forces refresh of browser
+        // window.location.reload();
+      };
+
     render() {
         if(this.state.redirect){
             return <Redirect to={`/user/${this.state.user.id}`}/>
@@ -54,6 +72,7 @@ class ProfileEdit extends Component {
         return (
             <div>
                 <h1>Edit Profile</h1>
+
                 <form onSubmit={this._profileEdit}>
                 <div>
                   <label htmlFor="nickname">Username: </label>
@@ -63,6 +82,7 @@ class ProfileEdit extends Component {
                 <button>Submit</button>
               </form>
               <Link to={`/profile/${this.state.user.id}`}><button>Back</button></Link>
+              <a href='/'><button onClick={this._deleteProfile}>DELETE Profile</button></a>
             </div>
         );
     }

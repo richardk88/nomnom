@@ -21,6 +21,7 @@ class Profile extends Component {
           user: res.data
         })
     }
+
     render() {
         const user = this.state.user
         return (
@@ -32,9 +33,6 @@ class Profile extends Component {
                 <p><strong>Last Updated: </strong>{user.updated_at}</p>
 
                 <Link to={`/user/${user.id}/favorites`}><button>View Favorites</button></Link>
-
-                <br />
-                <br />
 
                 <div>
                     <Link to={`/user/${user.id}/edit`}><button>Edit Profile</button></Link>
