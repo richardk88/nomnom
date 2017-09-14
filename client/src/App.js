@@ -7,7 +7,7 @@ import SignIn from './components/SignIn'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RestaurantShow from './components/RestaurantShow'
-import FavoriteList from './components/FavoriteList'
+import Favorites from './components/Favorites'
 import Profile from './components/Profile'
 import ProfileEdit from './components/ProfileEdit'
 import {setAxiosDefaults} from './util'
@@ -58,7 +58,6 @@ class App extends Component {
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
-
   
   render() {
     return (
@@ -66,11 +65,11 @@ class App extends Component {
         <div className="App">
           <NavBar />
           
-          <Route exact path = '/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange} />} />
+          <Route exact path ='/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange} />} />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
           <Route exact path='/signUp' component={SignUp} />
           <Route exact path='/signIn' component={SignIn} />
-          <Route exact path='/favorites' component={FavoriteList} />
+          <Route exact path='/favorites' component={Favorites} />
           <Route exact path='/user/:id' component={Profile} />
           <Route exact path='/user/:id/edit' component={ProfileEdit} />
         </div>

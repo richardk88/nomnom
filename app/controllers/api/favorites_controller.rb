@@ -16,7 +16,7 @@ class Api::FavoritesController < ApplicationController
     def create
         userId = User.find(current_user.id)
         restaurantId = Restaurant.find params[:restaurant_id]
-        @favorite = Favorite.create!(userId: userId, restaurantId: restaurantId)
+       
     end
 
     def destroy
