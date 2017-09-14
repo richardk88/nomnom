@@ -6,7 +6,17 @@ class RestaurantShow extends Component {
     constructor(){
         super();
         this.state = {
-            fourSquareData: {}
+            fourSquareData: {
+                featuredPhoto: '',
+                name: '',
+                phoneNumber: '',
+                address: '',
+                url: '',
+                rating: '',
+                price: '',
+                menu: '',
+                venue_id: ''
+            }
         }
     }
 
@@ -46,7 +56,8 @@ class RestaurantShow extends Component {
                 rating: res.data.response.venue.rating,
                 // hours,
                 price: res.data.response.venue.attributes.groups[0].summary,
-                menu: res.data.response.venue.menu.url 
+                menu: res.data.response.venue.menu.url,
+                venue_id: res.data.response.venue.id 
             }});
             console.log(this.state.fourSquareData.hours)
           return res.data  
@@ -56,7 +67,29 @@ class RestaurantShow extends Component {
         } 
       }
 
+      _addRestaurantToFavorites = async(e) => {
+        e.preventDefault();
+        const payload = {
+            featuredPhoto:this.state.fourSquareData.featuredPhoto,
+            venue_id: this.state.fourSquareData.venue_id,
+            name: this.state.fourSquareData.name
+        }
+        try {
+            const res = await axios.post(`/api/restaurants`, payload)
+            return res.data
+        }
+        catch(err){
+            console.log(err)
+        }
+      }
+
     render() {
+        const payload = {
+            featuredPhoto:this.state.fourSquareData.featuredPhoto,
+            venue_id: this.state.fourSquareData.venue_id,
+            name: this.state.fourSquareData.name
+        }
+        console.log(payload)
         const restaurant = this.state.fourSquareData
         return (
             <div>

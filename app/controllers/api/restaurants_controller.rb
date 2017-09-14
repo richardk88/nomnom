@@ -2,7 +2,7 @@ class Api::RestaurantsController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @restaurants = Restaurant.all 
+        @restaurants = current_user.favorite.restaurants.all 
         render json: @restaurants 
     end
 
@@ -11,10 +11,9 @@ class Api::RestaurantsController < ApplicationController
         render json: @restaurant
     end
 
-    # def create
-    #     @favorites = Favorites.find params[:id]
-    #     @favorites.restaurant.create!(restaurant_params)
-    # end
+    def create
+        @restaurant = current_user.favorite.restaurants.create(restaurant_params)
+    end
 
     def destroy
         @restaurant = Restaurant.find params[:id]
@@ -23,6 +22,6 @@ class Api::RestaurantsController < ApplicationController
 
     private
     def restaurant_params
-        params.require(:restaurant).permit(:name, :featuredPhoto, :address, :hours, :phoneNumber, :url, :price, :rating)
+        params.require(:restaurant).permit(:featuredPhoto, :venue_id, :name)
     end
 end

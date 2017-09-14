@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 20170912233904) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "featuredPhoto"
-    t.string "address"
-    t.string "hours"
-    t.string "phoneNumber"
-    t.string "url"
-    t.string "price"
-    t.string "rating"
-    t.string "menu"
     t.string "venue_id"
     t.bigint "favorite_id"
     t.datetime "created_at", null: false
