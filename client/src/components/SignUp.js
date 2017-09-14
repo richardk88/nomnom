@@ -10,6 +10,7 @@ class SignUp extends Component {
        email: '',
        password: '',
        password_confirmation: '',
+       nickname: '',
        redirect: false
    }
  }
@@ -17,6 +18,7 @@ class SignUp extends Component {
  _signUp = async (e) => {
   e.preventDefault();
   const payload = {
+    nickname: this.state.nickname,
     email: this.state.email,
     password: this.state.password,
     password_confirmation: this.state.password_confirmation
@@ -44,6 +46,10 @@ class SignUp extends Component {
    return (
      <div>
        <form onSubmit={this._signUp}>
+         <div>
+           <label htmlFor="email">Username: </label>
+           <input onChange={this._handleChange} type="text" name="nickname" value={this.state.nickname} />
+         </div>
          <div>
            <label htmlFor="email">E-mail: </label>
            <input onChange={this._handleChange} type="text" name="email" value={this.state.email} />

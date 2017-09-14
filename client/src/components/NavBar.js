@@ -37,10 +37,10 @@ class NavBar extends Component {
       }
     
       _isLoggedIn = async () => {
-        const response = await axios.get("/auth/validate_token");
+        const res = await axios.get("/auth/validate_token");
         this.setState({
-          user: response.data.data,
-          loggedIn: response.data.success
+          user: res.data.data,
+          loggedIn: res.data.success
         });
       };
       
@@ -60,7 +60,7 @@ class NavBar extends Component {
                     </Link>
                     <div>
                         {/* <span>Signed In As: {this.state.user.email}</span> */}
-                        <a href="/user/:id"> {this.state.user.email} </a>
+                        <a href={`/user/${this.state.user.id}`}> {this.state.user.email} </a>
                         <a href="" onClick={this._logOut}> Log Out </a>
                     </div>
                 </Nav>

@@ -69,7 +69,7 @@ class App extends Component {
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
           <Route exact path='/signUp' component={SignUp} />
           <Route exact path='/signIn' component={SignIn} />
-          <Route exact path='/favorites' component={Favorites} />
+          <Route exact path='/user/:id/favorites' component={Favorites} />
           <Route exact path='/user/:id' component={Profile} />
           <Route exact path='/user/:id/edit' component={ProfileEdit} />
         </div>

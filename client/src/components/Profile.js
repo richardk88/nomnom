@@ -15,17 +15,23 @@ class Profile extends Component {
     }
 
     _fetchUser = async() => {
-        const id = this.props.match.params.id
-        const res = await axios.get(`/api/artists/${id}`)
+        const res = await axios.get(`/api/users`)
+        console.log(res.data)
         this.setState({
-          user: res.data.user
+          user: res.data
         })
     }
     render() {
+        const user = this.state.user
         return (
             <div>
                 <h1>Profile Page</h1>
+                <p><strong>Username: </strong>{user.nickname}</p>
+                <p><strong>E-mail: </strong>{user.email}</p>
+                <p><strong>Created: </strong>{user.created_at}</p>
+                <p><strong>Last Updated: </strong>{user.updated_at}</p>
 
+                <Link to={`/user/${user.id}/favorites`}><button>View Favorites</button></Link>
 
                 <div>
                     <Link to={`/user/${this.state.user_id}`}><button>Edit Profile</button></Link>

@@ -12,9 +12,15 @@ const Container = styled.div`
 `
 
 class RestaurantList extends Component {
+    constructor() {
+        super();
+        this.state = {
+            error: ''
+        }
+    }
+
+    
     render() {
-
-
         const restaurantList = this.props.restaurants.map((restaurant, i) => {
             const restaurantImg = `${restaurant.venue.featuredPhotos.items[0].prefix}412x312${restaurant.venue.featuredPhotos.items[0].suffix}`
             return (
