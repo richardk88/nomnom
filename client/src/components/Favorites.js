@@ -30,7 +30,7 @@ class Favorites extends Component {
                 {this.state.favorites.map((favorite,i) => {
                     return (<div key={i}>
                             <img src={favorite.featuredPhoto} />
-                            <FavoriteDelete favorite={favorite.id}/>
+                            <FavoriteDelete favorite={favorite.id} fetchFavorites={this._fetchFavorites}/>
                            </div>
                     )
                 })}
