@@ -33,6 +33,9 @@ class Profile extends Component {
 
                 <Link to={`/user/${user.id}/favorites`}><button>View Favorites</button></Link>
 
+                <br />
+                <br />
+
                 <div>
                     <Link to={`/user/${this.state.user_id}`}><button>Edit Profile</button></Link>
                     <Link to={`/`}><button>Back</button></Link>
