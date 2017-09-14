@@ -6,20 +6,32 @@ class ProfileEdit extends Component {
     constructor(){
         super();
         this.state = {
-            profile: {},
+            user: {
+                nickname: ''
+            },
             redirect: false
         }
     }
 
     componentWillMount () {
-        const profileId = this.props.match.params.id;
-        this._fetchProfile(profileId)
+        this._fetchProfileData();
     }
 
-    _fetchProfile = async(profileId) => {
+    _fetchProfileData = async() => {
+        const res = await axios.get(`/api/users`)
+        this.setState({ user: {
+            nickname: res.data.nickname
+        }})
+        console.log(res.data)
+        return res.data
+    }
+
+    _profileEdit = async(e) => {
+        e.preventDefault();
+        const payload = this.state.user
         try {
-            const res = await axios.get(`/api/favorites/${profileId}`)
-            this.setState({ profile: res.data[0] })
+            const res = await axios.patch('/auth', payload)
+            await this.setState({redirect: true})
             return res.data
         }
         catch(error){
@@ -27,40 +39,30 @@ class ProfileEdit extends Component {
         }
     }
 
-    _profileEdit = async(e) => {
-        e.preventDefault();
-        
-    }
-
-    _handleChange = (e) => {
-        const newState = {...this.state.profile}
-        newState[e.target.name] = e.target.value;
-        this.setState({profile: newState})
+    _handleChange =(e) => {
+        const attributeName = e.target.name;
+        const attributeValue = e.target.value;
+        const user = {...this.state.user}
+        user[attributeName]=attributeValue;
+        this.setState({user});
     }
 
     render() {
         if(this.state.redirect){
-            const id = this.props.match.params.id;
-            return <Redirect to={`/profile/${id}`}/>
+            return <Redirect to={`/user/${this.state.user.id}`}/>
         }
         return (
             <div>
                 <h1>Edit Profile</h1>
-                <form>
-                    <div>
-                        <label htmlFor="name">Email: </label>
-                        <input onChange={this._handleChange} type='text' name='email' value={this.state.profile.email} />
-                    </div>
-                    <div>
-                        <label htmlFor="name">Password: </label>
-                        <input onChange={this._handleChange} type='text' name='password' value={this.state.profile.password} />
-                    </div>
-                    <div>
-                        <label htmlFor="name">Password Confirmation: </label>
-                        <input onChange={this._handleChange} type='text' name='password_confirmation' value={this.state.profile.password_confirmation} />
-                    </div>
-                    <button onClick={this._profileEdit}>Submit</button>
-                </form>
+                <form onSubmit={this._profileEdit}>
+                <div>
+                  <label htmlFor="nickname">Username: </label>
+                  <input onChange={this._handleChange} type="text" name="nickname" placeholder={this.state.user.nickname} />
+                </div>
+                
+                <button>Submit</button>
+              </form>
+              <Link to={`/profile/${this.state.user.id}`}><button>Back</button></Link>
             </div>
         );
     }
