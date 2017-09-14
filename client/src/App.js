@@ -24,12 +24,12 @@ class App extends Component {
   }
 
   componentWillMount(){
-    setAxiosDefaults()
+    // setAxiosDefaults()
     this._setDefaultRestaurantData();
   }
 
   _setDefaultRestaurantData = async(e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const apiKeyId = process.env.REACT_APP_API_KEY_ID;
     const apiKeySecret = process.env.REACT_APP_API_KEY_SECRET;
     
