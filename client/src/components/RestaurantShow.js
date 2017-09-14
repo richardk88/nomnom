@@ -65,9 +65,9 @@ class RestaurantShow extends Component {
                 address: res.data.response.venue.location.formattedAddress,
                 url: res.data.response.venue.url,
                 rating: res.data.response.venue.rating,
-                // hours,
+                // hours: res.data.response.venue.hours.status,
                 price: res.data.response.venue.attributes.groups[0].summary,
-                menu: res.data.response.venue.menu.url,
+                // menu: res.data.response.venue.menu.url,
                 venue_id: res.data.response.venue.id 
             }});
           return res.data  
@@ -105,8 +105,7 @@ class RestaurantShow extends Component {
                 <p>{restaurant.address}</p>
                 <p><strong>Rating: </strong>{restaurant.rating}/10</p>
                 {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
-                <a href={restaurant.menu} target='blank'>Menu </a>
-                <br/>
+                {/* <a href={restaurant.menu} target='blank'>Menu </a> */}
                 <a href={restaurant.url} target='blank'> Website</a>
                 <div>
                     <Link to={`/user/${this.state.user.id}/favorites`}><button onClick={this._addRestaurantToFavorites}>Add to Favorites</button></Link>
