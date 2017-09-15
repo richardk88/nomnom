@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios'
 import FavoriteDelete from './FavoriteDelete'
 
@@ -29,8 +30,13 @@ class Favorites extends Component {
                 <h1>Favorite List</h1>
                 {this.state.favorites.map((favorite,i) => {
                     return (<div key={i}>
+                        <Link to={`/restaurants/${favorite.venue_id}`}>                           
                             <img src={favorite.featuredPhoto} />
+                            <h3>{favorite.name}</h3>
+                        </Link>
+                             
                             <FavoriteDelete favorite={favorite.id} fetchFavorites={this._fetchFavorites}/>
+                        
                            </div>
                     )
                 })}
