@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import axios from 'axios'
+import FaStar from 'react-icons/lib/fa/star'
 
 const Nav = styled.div`
     width: 100%;
@@ -57,8 +58,8 @@ class NavBar extends Component {
                         <div className='titleContainer'><img src='https://i.imgur.com/AAAFNhJ.png' className='navbarTitle'/></div>
                     </Link>
                     <div>
-                    <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites` } className='navRightHover'>FAVORITES</Link></span>
-                        <span className='navRight'><a href={`/user/${this.state.user.id}`} className='navRightHover'> {this.state.user.nickname.toUpperCase()} </a></span>
+                    <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites` } className='navRightHover'><FaStar />FAVORITES</Link></span>
+                        <span className='navRight'><a href={`/user/${this.state.user.id}`} className='navRightHover underline'> {this.state.user.nickname.toUpperCase()} </a></span>
                         <span className='navRight'><a href="/signIn" onClick={this._logOut} className='navRightLogOut'> LOG OUT </a></span>
                     </div>
                 </Nav>
