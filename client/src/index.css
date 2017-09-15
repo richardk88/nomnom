@@ -61,28 +61,30 @@ img{
 }
 .searchContainer {
   background-color: white;
-  padding: 5px 9px;
   margin: 0 30vw;
+  padding-left: 10px;
   box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
-}
-.cityContainer {
-  border-left: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 button.searchBtn {
   border: none;
   background-color: #EAEA1B;
-  margin-right: 0;
+  padding: 10px 10px;
+  margin: 0;
 }
 .headerImg {
   width: 65vw;
   padding: 60px 0 20px 0;
 }
-.findClass {
-  margin-left: 5px;
-}
+
 input{
   max-width: 100%;
   height: auto;
+}
+label{
+  margin-left: 4px;
 }
 .restaurantNameContainer {
 

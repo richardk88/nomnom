@@ -14,14 +14,14 @@ class HomePage extends Component {
                             <label htmlFor="foodType"><span className='findClass'>Find</span></label>
                             <input onChange={this.props.handleChange} type="text" name="foodType" value={this.props.foodType} placeholder='pizza, sushi, etc..'/>
                         </span>
-                        <span className='cityContainer'>
+                        <span>
                             <label htmlFor="city">Near</label>
                             <input onChange={this.props.handleChange} type="text" name="city" value={this.props.city} placeholder='Atlanta'/>
                         </span>
                         <button className='searchBtn'><FaSearch size={20}/></button>
                     </div>
                 </form>
-
+                <br />
                 <RestaurantList restaurants={this.props.restaurants} />     
             </div>
         );
