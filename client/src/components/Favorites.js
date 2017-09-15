@@ -40,14 +40,12 @@ class Favorites extends Component {
                 <h1>Favorite List</h1>
                 <Container>
                     {this.state.favorites.map((favorite,i) => {
-                        return (<div key={i}>
-                            <Link to={`/restaurants/${favorite.venue_id}`}>                           
-                                <img src={favorite.featuredPhoto} />
-                                <h3>{favorite.name}</h3>
-                            </Link>
-                                
+                        return (<div key={i} className='favoriteRestaurantContainer'>
+                                <Link to={`/restaurants/${favorite.venue_id}`}>                           
+                                    <img src={favorite.featuredPhoto} />
+                                    <h3>{favorite.name}</h3>
+                                </Link>
                                 <FavoriteDelete favorite={favorite.id} fetchFavorites={this._fetchFavorites}/>
-                            
                             </div>
                         )
                     })}

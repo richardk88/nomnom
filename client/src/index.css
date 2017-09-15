@@ -9,6 +9,9 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  font-family: 'Rubik', sans-serif;
+}
 .navbarTitle {
   width: 70px;
 }
@@ -67,6 +70,7 @@ img{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 button.searchBtn {
   border: none;
@@ -78,7 +82,13 @@ button.searchBtn {
   width: 65vw;
   padding: 60px 0 20px 0;
 }
-
+.searchLabel {
+  padding-right: 5px;
+}
+.fitSearchContainer {
+  max-width: 100%;
+  height: auto;
+}
 input{
   max-width: 100%;
   height: auto;
@@ -87,7 +97,24 @@ label{
   margin-left: 4px;
 }
 .restaurantNameContainer {
-
+  font-family: 'Rubik', sans-serif;
+  color: black;
+}
+.mapContainer {
+  text-decoration: none;
+  background-color: white;
+  margin: 10px;
+  box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
+}
+  .restaurantImg {
+    border: 1px solid rgba(134, 133, 133, 0.63);
+  }
+.favoriteRestaurantContainer {
+  background-color: white;
+  margin: 5px 30vw;
+  padding: 10px;
+  box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 420px) {
@@ -97,6 +124,7 @@ label{
     font-size: 1rem;
   }
 }
+
 @media only screen and (max-width: 340px) {
   .navRight {
     background-color: #434242;

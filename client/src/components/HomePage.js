@@ -10,12 +10,12 @@ class HomePage extends Component {
                 <img src='https://i.imgur.com/LH2ZJxG.png' className='headerImg'/>
                 <form onSubmit={this.props.setDefaultRestaurantData}>
                     <div className='searchContainer'>
-                        <span>
-                            <label htmlFor="foodType"><span className='findClass'>Find</span></label>
+                        <span className='fitSearchContainer'>
+                            <label htmlFor="foodType" className='searchLabel'>Find</label>
                             <input onChange={this.props.handleChange} type="text" name="foodType" value={this.props.foodType} placeholder='pizza, sushi, etc..'/>
                         </span>
-                        <span>
-                            <label htmlFor="city">Near</label>
+                        <span className='fitSearchContainer'>
+                            <label htmlFor="city" className='searchLabel'>Near</label>
                             <input onChange={this.props.handleChange} type="text" name="city" value={this.props.city} placeholder='Atlanta'/>
                         </span>
                         <button className='searchBtn'><FaSearch size={20}/></button>
