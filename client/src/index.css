@@ -34,8 +34,26 @@ a.navRightLogOut:hover {
 .underline {
   border-bottom: 1px solid rgb(105, 246, 110);
 }
-
-
+img{
+  max-width: 100%;
+  height: auto;
+}
+.restaurantContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 45px 50px;
+  box-shadow: rgba(0,0,0,0.2) 1px 1px 6px 0px;
+  background-color: white;
+  padding: 15px 5px;
+}
+.addBtn {
+  color: red;
+  border-radius: 100px;
+}
+.back {
+  color: #454545
+}
 
 @media only screen and (max-width: 420px) {
   .navRight {

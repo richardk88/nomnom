@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import FaPlusSquareO from 'react-icons/lib/fa/plus-square-o'
+import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
 
 class RestaurantShow extends Component {
     constructor(){
@@ -59,7 +61,7 @@ class RestaurantShow extends Component {
             // } 
 
             await this.setState ({ fourSquareData: {
-                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}720x431${res.data.response.venue.bestPhoto.suffix}`,
+                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}410x171${res.data.response.venue.bestPhoto.suffix}`,
                 name: res.data.response.venue.name,
                 phoneNumber: res.data.response.venue.contact.formattedPhone,
                 address: res.data.response.venue.location.formattedAddress,
@@ -97,19 +99,22 @@ class RestaurantShow extends Component {
     render() {
         const restaurant = this.state.fourSquareData
         return (
-            <div>
-                <img src={restaurant.featuredPhoto} alt=''/>
-                <h1>{restaurant.name}</h1> 
-                <p><strong>Price: </strong>{restaurant.price}</p>
-                <p>{restaurant.phoneNumber}</p>
-                <p>{restaurant.address}</p>
-                <p><strong>Rating: </strong>{restaurant.rating}/10</p>
-                {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
-                {/* <a href={restaurant.menu} target='blank'>Menu </a> */}
-                <a href={restaurant.url} target='blank'> Website</a>
+            <div className='restaurantContainer'>
+                <img src={restaurant.featuredPhoto} className='container' responsive/>
                 <div>
-                    <Link to={`/user/${this.state.user.id}/favorites`}><button onClick={this._addRestaurantToFavorites}>Add to Favorites</button></Link>
-                    <Link to={`/`}><button>Back</button></Link>
+                    <h1>{restaurant.name}</h1> 
+                    <p><strong>Price: </strong>{restaurant.price}</p>
+                    <p>{restaurant.phoneNumber}</p>
+                    <p>{restaurant.address}</p>
+                    <p><strong>Rating: </strong>{restaurant.rating}/10</p>
+                    {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
+                    {/* <a href={restaurant.menu} target='blank'>Menu </a> */}
+                    <a href={restaurant.url} target='blank'> Website</a>
+                </div>
+                
+                <div>
+                    <Link to={`/`}><FaArrowLeft size={35} className='back'/></Link>
+                    <Link to={`/user/${this.state.user.id}/favorites`} onClick={this._addRestaurantToFavorites}><FaPlusSquareO size={35} className='addBtn'/></Link>
                 </div>
             </div>
         );
