@@ -19,7 +19,8 @@ class App extends Component {
     this.state = {
       fourSquareData: [],
       city: 'atlanta',
-      foodType: 'pizza'
+      foodType: 'pizza',
+      loggedIn: false
     }
   }
 
@@ -58,12 +59,16 @@ class App extends Component {
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
+
+  _toggleLogIn = () => {
+    this.setState({loggedIn: !this.state.loggedIn})
+  }
   
   render() {
     return (
       <Router>
         <div className="App">
-          <NavBar />
+          <NavBar toggleLogIn={this._toggleLogIn} />
           
           <Route exact path ='/' render={routeProps => <HomePage {...routeProps} restaurants= {this.state.fourSquareData} setDefaultRestaurantData={this._setDefaultRestaurantData} handleChange={this._handleChange} />} />
           <Route exact path='/restaurants/:id' component={RestaurantShow} />
