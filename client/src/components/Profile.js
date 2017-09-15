@@ -36,7 +36,7 @@ class Profile extends Component {
 
                 <div>
                     <Link to={`/user/${user.id}/edit`}><button>Edit Profile</button></Link>
-                    <Link to={`/`}><button>Back</button></Link>
+                    {/* <Link to={`/`}><button>Back</button></Link> */}
                 </div>
             </div>
         );
