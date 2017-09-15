@@ -61,7 +61,7 @@ class RestaurantShow extends Component {
             // } 
 
             await this.setState ({ fourSquareData: {
-                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}410x171${res.data.response.venue.bestPhoto.suffix}`,
+                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}310x171${res.data.response.venue.bestPhoto.suffix}`,
                 name: res.data.response.venue.name,
                 phoneNumber: res.data.response.venue.contact.formattedPhone,
                 address: res.data.response.venue.location.formattedAddress,

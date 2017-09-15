@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import FavoriteDelete from './FavoriteDelete'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+        margin: 5px;
+    }
+`
 
 class Favorites extends Component {
     constructor(){
@@ -28,18 +38,20 @@ class Favorites extends Component {
         return (
             <div>
                 <h1>Favorite List</h1>
-                {this.state.favorites.map((favorite,i) => {
-                    return (<div key={i}>
-                        <Link to={`/restaurants/${favorite.venue_id}`}>                           
-                            <img src={favorite.featuredPhoto} />
-                            <h3>{favorite.name}</h3>
-                        </Link>
-                             
-                            <FavoriteDelete favorite={favorite.id} fetchFavorites={this._fetchFavorites}/>
-                        
-                           </div>
-                    )
-                })}
+                <Container>
+                    {this.state.favorites.map((favorite,i) => {
+                        return (<div key={i}>
+                            <Link to={`/restaurants/${favorite.venue_id}`}>                           
+                                <img src={favorite.featuredPhoto} />
+                                <h3>{favorite.name}</h3>
+                            </Link>
+                                
+                                <FavoriteDelete favorite={favorite.id} fetchFavorites={this._fetchFavorites}/>
+                            
+                            </div>
+                        )
+                    })}
+                </Container>
             </div>
         );
     }

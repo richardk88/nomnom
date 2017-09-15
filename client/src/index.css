@@ -1,5 +1,5 @@
 body {
-  background: url('https://i.imgur.com/He7wKt8.png')no-repeat center center fixed; 
+  background: url('https://i.imgur.com/OSpYuZx.png?1')no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,6 +15,7 @@ body {
 .titleContainer {
   background-color: #EAEA1B;
   padding: 5px 9px;
+  box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
 }
 .loggedOutContainer {
   display:flex;
@@ -24,6 +25,7 @@ body {
   background-color: #434242;
   padding: 20px 12px;
   font-size: 1.3rem;
+  box-shadow: rgba(0,0,0,0.4) 3px 3px 7px 0px;
 }
 a.navRightHover:hover {
   color: rgb(105, 246, 110) !important;
@@ -43,7 +45,7 @@ img{
   flex-direction: column;
   align-items: center;
   margin: 45px 50px;
-  box-shadow: rgba(0,0,0,0.2) 1px 1px 6px 0px;
+  box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
   background-color: white;
   padding: 15px 5px;
 }
@@ -54,6 +56,37 @@ img{
 .back {
   color: #454545
 }
+.searchIcon {
+  background-color: #EAEA1B;
+}
+.searchContainer {
+  background-color: white;
+  padding: 5px 9px;
+  margin: 0 30vw;
+  box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
+}
+.cityContainer {
+  border-left: 1px solid black;
+}
+button.searchBtn {
+  border: none;
+  background-color: #EAEA1B;
+  margin-right: 0;
+}
+.headerImg {
+  width: 65vw;
+  padding: 60px 0 20px 0;
+}
+.findClass {
+  margin-left: 5px;
+}
+input{
+  max-width: 100%;
+  height: auto;
+}
+.restaurantNameContainer {
+
+}
 
 @media only screen and (max-width: 420px) {
   .navRight {
@@ -62,7 +95,6 @@ img{
     font-size: 1rem;
   }
 }
-
 @media only screen and (max-width: 340px) {
   .navRight {
     background-color: #434242;

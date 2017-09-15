@@ -27,7 +27,7 @@ class RestaurantList extends Component {
                 <div key={i}>
                     <Link to={`/restaurants/${restaurant.venue.id}`}>
                         <img src={restaurantImg} alt={restaurant.venue.name}/>
-                        <h1>{restaurant.venue.name}</h1>
+                        <h3 className='restaurantNameContainer'>{restaurant.venue.name}</h3>
                     </Link>
                 </div>
             )
