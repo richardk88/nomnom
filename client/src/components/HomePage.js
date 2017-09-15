@@ -6,7 +6,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h1>NomNom</h1>
+                <h1 >NomNom</h1>
                 <form onSubmit={this.props.setDefaultRestaurantData}>
                     <div>
                         <label htmlFor="city">Which city are you in?</label>

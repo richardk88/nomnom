@@ -1,5 +1,29 @@
 body {
+  background: url('https://i.imgur.com/He7wKt8.png')no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.navbarTitle {
+  width: 70px;
+}
+.titleContainer {
+  background-color: #ECEC10;
+  padding: 5px 9px;
+}
+.loggedOutContainer {
+
+}
+.navRight {
+  background-color: #434242;
+  padding: 20px 12px;
+  font-size: 1.3rem;
+}
+a.navRightHover:hover {
+  color: rgb(62, 255, 81) !important;
 }

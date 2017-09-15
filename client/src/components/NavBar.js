@@ -4,16 +4,14 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 const Nav = styled.div`
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2.5%;
-    background-color: rgb(253,202,0);
-    box-shadow: 0px 1px 6px black;
+    background: linear-gradient(white, rgba(255,255,255,.75), rgba(0,0,0,0));
     a {
         text-decoration: none;
-        margin: 0 5px;
         &:visited {
             color: white;
         }
@@ -56,12 +54,12 @@ class NavBar extends Component {
             return (
                 <Nav>
                     <Link to="/">
-                        <h1>Nom Nom</h1>
+                        <div className='titleContainer'><img src='https://i.imgur.com/AAAFNhJ.png' className='navbarTitle'/></div>
                     </Link>
                     <div>
-                        <Link to={`/user/${this.state.user.id}/favorites`}>Favorites</Link>
-                        <a href={`/user/${this.state.user.id}`}> {this.state.user.nickname} </a>
-                        <a href="/signIn" onClick={this._logOut}> Log Out </a>
+                    <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites`}>Favorites</Link></span>
+                        <span className='navRight'><a href={`/user/${this.state.user.id}`}> {this.state.user.nickname} </a></span>
+                        <span className='navRight'><a href="/signIn" onClick={this._logOut}> Log Out </a></span>
                     </div>
                 </Nav>
                 
@@ -70,11 +68,15 @@ class NavBar extends Component {
         return (
         <Nav>
             <Link to="/">
-              <h1>Nom Nom</h1>
+                <div className='titleContainer'><img src='https://i.imgur.com/AAAFNhJ.png' className='navbarTitle'/></div>
             </Link>
-            <div>
-              <Link to="/signup">Sign Up</Link>
-              <Link to="/signin">Sign In</Link>
+            <div className='loggedOutContainer'>
+                <span className='navRight'>
+                    <Link to="/signup" className='navRightHover'>Sign Up</Link>
+                </span>
+                <span className='navRight'>
+                    <Link to="/signin" className='navRightHover'>Sign In</Link>
+                </span>
             </div>
         </Nav>
         );
