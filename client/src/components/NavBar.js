@@ -57,9 +57,9 @@ class NavBar extends Component {
                         <div className='titleContainer'><img src='https://i.imgur.com/AAAFNhJ.png' className='navbarTitle'/></div>
                     </Link>
                     <div>
-                    <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites`}>Favorites</Link></span>
-                        <span className='navRight'><a href={`/user/${this.state.user.id}`}> {this.state.user.nickname} </a></span>
-                        <span className='navRight'><a href="/signIn" onClick={this._logOut}> Log Out </a></span>
+                    <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites` } className='navRightHover'>FAVORITES</Link></span>
+                        <span className='navRight'><a href={`/user/${this.state.user.id}`} className='navRightHover'> {this.state.user.nickname.toUpperCase()} </a></span>
+                        <span className='navRight'><a href="/signIn" onClick={this._logOut} className='navRightLogOut'> LOG OUT </a></span>
                     </div>
                 </Nav>
                 
@@ -72,10 +72,10 @@ class NavBar extends Component {
             </Link>
             <div className='loggedOutContainer'>
                 <span className='navRight'>
-                    <Link to="/signup" className='navRightHover'>Sign Up</Link>
+                    <Link to="/signup" className='navRightHover'>SIGN UP</Link>
                 </span>
                 <span className='navRight'>
-                    <Link to="/signin" className='navRightHover'>Sign In</Link>
+                    <Link to="/signin" className='navRightHover'>SIGN IN</Link>
                 </span>
             </div>
         </Nav>

@@ -17,6 +17,7 @@ body {
   padding: 5px 9px;
 }
 .loggedOutContainer {
+  display:flex;
 
 }
 .navRight {
@@ -25,5 +26,8 @@ body {
   font-size: 1.3rem;
 }
 a.navRightHover:hover {
-  color: rgb(62, 255, 81) !important;
+  color: rgb(105, 246, 110) !important;
+}
+a.navRightLogOut:hover {
+  color: rgb(253, 74, 43) !important;
 }
