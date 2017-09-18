@@ -61,7 +61,7 @@ class RestaurantShow extends Component {
             // } 
 
             await this.setState ({ fourSquareData: {
-                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}310x171${res.data.response.venue.bestPhoto.suffix}`,
+                featuredPhoto: `${res.data.response.venue.bestPhoto.prefix}410x171${res.data.response.venue.bestPhoto.suffix}`,
                 name: res.data.response.venue.name,
                 phoneNumber: res.data.response.venue.contact.formattedPhone,
                 address: res.data.response.venue.location.formattedAddress,
@@ -112,7 +112,7 @@ class RestaurantShow extends Component {
                     <a href={restaurant.url} target='blank'> Website</a>
                 </div>
                 
-                <div>
+                <div className='showPageLinks'>
                     <Link to={`/`}><FaArrowLeft size={35} className='back'/></Link>
                     <Link to={`/user/${this.state.user.id}/favorites`} onClick={this._addRestaurantToFavorites}><FaPlusSquareO size={35} className='addBtn'/></Link>
                 </div>

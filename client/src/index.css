@@ -116,6 +116,12 @@ label{
   box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
   flex-wrap: wrap;
 }
+.showPageLinks {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 90%;
+}
 
 @media only screen and (max-width: 420px) {
   .navRight {
