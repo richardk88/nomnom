@@ -60,7 +60,7 @@ class NavBar extends Component {
                     <div>
                     <span className='navRight'><Link to={`/user/${this.state.user.id}/favorites` } className='navRightHover'><FaStar />FAVORITES</Link></span>
                         <span className='navRight'><Link to={`/user/${this.state.user.id}`} className='navRightHover underline'> {this.state.user.nickname.toUpperCase()} </Link></span>
-                        <span className='navRight'><a href="/signIn" onClick={this._logOut} className='navRightLogOut'> LOG OUT </a></span>
+                        <span className='navRight'><Link to="/signIn" onClick={this._logOut} className='navRightLogOut'> LOG OUT </Link></span>
                     </div>
                 </Nav>
                 
