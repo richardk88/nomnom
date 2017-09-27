@@ -37,20 +37,20 @@ class SignIn extends Component {
    }
    return (
      <div>
-       <form onSubmit={this._signIn}>
-         <div>
-           <label htmlFor="email">E-mail: </label>
-           <input onChange={this._handleChange} type="text" name="email" value={this.state.email} />
-         </div>
-         <div>
-           <label htmlFor="password">Password: </label>
-           <input onChange={this._handleChange} type="password" name="password" value={this.state.password} />
-         </div>
-
-         
-         <button>Log In</button>
-       
-       </form>
+       <h1 className='title'>Profile Page</h1>
+       <div className='profileContainer'>
+        <form onSubmit={this._signIn}>
+          <div>
+            <label htmlFor="email">E-mail: </label>
+            <input onChange={this._handleChange} type="text" name="email" value={this.state.email} />
+          </div>
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input onChange={this._handleChange} type="password" name="password" value={this.state.password} />
+          </div>
+          <button className='btnColor'>Log In</button>
+        </form>
+      </div>
      </div>
    );
  }

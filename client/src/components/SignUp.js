@@ -57,27 +57,30 @@ class SignUp extends Component {
    }
    return (
      <div>
-       <form onSubmit={this._signUp}>
-         <div>
-           <label htmlFor="username">Username: </label>
-           <input onChange={this._handleChange} type="text" name="nickname" value={this.state.nickname} />
-         </div>
-         <div>
-           <label htmlFor="email">E-mail: </label>
-           <input onChange={this._handleChange} type="text" name="email" value={this.state.email} />
-         </div>
-         <div>
-           <label htmlFor="password">Password: </label>
-           <input onChange={this._handleChange} type="password" name="password" value={this.state.password} />
-         </div>
-         <div>
-           <label htmlFor="password">Confirm Password: </label>
-           <input onChange={this._handleChange} type="password" name="password_confirmation" value={this.state.password_confirmation} />
-         </div>
-         
-         <button>Sign Up</button>
-         <button onClick={this._signIn}>Log In</button>
-       </form>
+       <h1 className='title'>Sign Up</h1>
+       <div className='profileContainer'>
+        <form onSubmit={this._signUp}>
+          <div>
+            <label htmlFor="username">Username: </label>
+            <input onChange={this._handleChange} type="text" name="nickname" value={this.state.nickname} />
+          </div>
+          <div>
+            <label htmlFor="email">E-mail: </label>
+            <input onChange={this._handleChange} type="text" name="email" value={this.state.email} />
+          </div>
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input onChange={this._handleChange} type="password" name="password" value={this.state.password} />
+          </div>
+          <div>
+            <label htmlFor="password">Confirm Password: </label>
+            <input onChange={this._handleChange} type="password" name="password_confirmation" value={this.state.password_confirmation} />
+          </div>
+          
+          <button className='btnColor'>Sign Up</button>
+          <button onClick={this._signIn} className='btnColor'>Log In</button>
+        </form>
+      </div>
      </div>
    );
  }
