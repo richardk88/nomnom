@@ -56,6 +56,9 @@ img{
   color: red;
   border-radius: 100px;
 }
+.addBtn:active {
+  color: rgb(105, 246, 110);
+}
 .back {
   color: #454545
 }
@@ -117,6 +120,7 @@ label{
   padding: 10px;
   box-shadow: rgba(0,0,0,0.3) 3px 3px 7px 0px;
   flex-wrap: wrap;
+  margin: 5px;
 }
 .showPageLinks {
   display: flex;
