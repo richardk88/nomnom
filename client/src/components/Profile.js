@@ -26,16 +26,18 @@ class Profile extends Component {
         const user = this.state.user
         return (
             <div>
-                <h1>Profile Page</h1>
-                <p><strong>Username: </strong>{user.nickname}</p>
-                <p><strong>E-mail: </strong>{user.email}</p>
-                <p><strong>Created: </strong>{user.created_at}</p>
-                <p><strong>Last Updated: </strong>{user.updated_at}</p>
-
-                <Link to={`/user/${user.id}/favorites`}><button>View Favorites</button></Link>
+                <h1 className='title'>Profile Page</h1>
+                <div className='profileContainer'>
+                    <p><strong>Username: </strong>{user.nickname}</p>
+                    <p><strong>E-mail: </strong>{user.email}</p>
+                    <p><strong>Created: </strong>{user.created_at}</p>
+                    <p><strong>Last Updated: </strong>{user.updated_at}</p>
+                </div>
+                
+                <Link to={`/user/${user.id}/favorites`}><button className='btnColor'>View Favorites</button></Link>
 
                 <div>
-                    <Link to={`/user/${user.id}/edit`}><button>Edit Profile</button></Link>
+                    <Link to={`/user/${user.id}/edit`}><button className='btnColor'>Edit Profile</button></Link>
                     {/* <Link to={`/`}><button>Back</button></Link> */}
                 </div>
             </div>

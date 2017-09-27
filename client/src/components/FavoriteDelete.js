@@ -12,7 +12,7 @@ class FavoriteDelete extends Component {
     render() {
         return (
             <div>
-                <button onClick={this._deleteRestaurant}>Delete</button>
+                <button onClick={this._deleteRestaurant} className='deleteBtn'>Delete</button>
             </div>
         );
     }
