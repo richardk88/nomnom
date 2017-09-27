@@ -71,18 +71,19 @@ class ProfileEdit extends Component {
         }
         return (
             <div>
-                <h1>Edit Profile</h1>
-
-                <form onSubmit={this._profileEdit}>
-                <div>
-                  <label htmlFor="nickname">Username: </label>
-                  <input onChange={this._handleChange} type="text" name="nickname" placeholder={this.state.user.nickname} />
+                <h1 className='title'>Edit Profile</h1>
+                <div className='profileContainer'>
+                    <form onSubmit={this._profileEdit}>
+                        <div>
+                        <label htmlFor="nickname">Username: </label>
+                        <input onChange={this._handleChange} type="text" name="nickname" placeholder={this.state.user.nickname} />
+                        </div>
+                        
+                        <button className='btnColor'>Submit</button>
+                    </form>
                 </div>
-                
-                <button>Submit</button>
-              </form>
-              <Link to={`/profile/${this.state.user.id}`}><button>Back</button></Link>
-              <a href='/'><button onClick={this._deleteProfile}>DELETE Profile</button></a>
+                <Link to={`/user/${this.state.user.id}`}><button className='btnColor'>Back</button></Link>
+                <a href='/'><button onClick={this._deleteProfile} className='btnColor'>DELETE Profile</button></a>
             </div>
         );
     }
