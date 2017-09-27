@@ -123,18 +123,74 @@ label{
   width: 90%;
 }
 
-@media only screen and (max-width: 420px) {
+
+@media only screen and (max-width: 1100px) {
+  .searchContainer {
+    margin: 0 14vw;
+    flex-direction: row;
+    width: 70vw;
+  }
+}
+
+
+@media only screen and (max-width: 770px) {
   .navRight {
     background-color: #434242;
     padding: 20px 7px;
     font-size: 1rem;
   }
+  .searchContainer {
+    margin: 0 14vw;
+    flex-direction: row;
+    width: 70vw;
+  }
+  .fitSearchContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 30vw;
+  }
+  .searchLabel {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  input{
+    max-width: 100%;
+    height: auto;
+  }
+  
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 380px) {
   .navRight {
     background-color: #434242;
     padding: 20px 5px;
     font-size: .8rem;
+  }
+  .headerImg {
+    width: 95vw;
+    padding: 45px 0 20px 0;
+  }
+  .searchContainer {
+    margin: 0 5vw;
+    padding-left: 10px;
+    flex-direction: row;
+    width: 90vw;
+  }
+  button.searchBtn {
+    padding: 10px 10px;
+    margin: 0;
+  }
+  .searchLabel {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  input{
+    max-width: 100%;
+    height: auto;
+  }
+  .fitSearchContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 30vw;
   }
 }
