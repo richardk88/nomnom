@@ -113,8 +113,8 @@ class RestaurantShow extends Component {
                 </div>
                 
                 <div className='showPageLinks'>
-                    <Link to={`/`}><FaArrowLeft size={35} className='back'/></Link>
-                    <Link to={`/user/${this.state.user.id}/favorites`} onClick={this._addRestaurantToFavorites}><FaPlusSquareO size={35} className='addBtn'/></Link>
+                    <Link to={`/`}><FaArrowLeft size={36} className='back'/></Link>
+                    <Link to={`/user/${this.state.user.id}/favorites`} onClick={this._addRestaurantToFavorites}><FaPlusSquareO size={36} className='addBtn'/></Link>
                 </div>
             </div>
         );
