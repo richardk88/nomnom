@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import FaPlusSquareO from 'react-icons/lib/fa/plus-square-o'
-import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
+import {FaArrowLeft} from 'react-icons/lib/fa'
 
 class RestaurantShow extends Component {
     constructor(){
