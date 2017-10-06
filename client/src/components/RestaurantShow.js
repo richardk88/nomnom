@@ -109,7 +109,7 @@ class RestaurantShow extends Component {
                     <p><strong>Rating: </strong>{restaurant.rating}/10</p>
                     {/* <p><strong>Hours: </strong>{restaurant.hours}</p> */}
                     {/* <a href={restaurant.menu} target='blank'>Menu </a> */}
-                    <a href={restaurant.url} target='blank'> Website</a>
+                    <a href={restaurant.url} target='blank'> See More..</a>
                 </div>
                 
                 <div className='showPageLinks'>
