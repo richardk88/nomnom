@@ -103,7 +103,7 @@ class RestaurantShow extends Component {
                 <img src={restaurant.featuredPhoto} className='container' responsive/>
                 <div>
                     <h1>{restaurant.name}</h1> 
-                    <p><strong>Price: </strong>{restaurant.price}</p>
+                    <p><strong>Price: </strong><span className='price'>{restaurant.price}</span></p>
                     <p>{restaurant.phoneNumber}</p>
                     <p>{restaurant.address}</p>
                     <p><strong>Rating: </strong>{restaurant.rating}/10</p>
