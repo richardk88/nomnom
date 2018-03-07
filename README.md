@@ -1,5 +1,10 @@
 # Nom Nom
 
+```
+//server
+foreman start -f procfile dev
+```
+
 HEROKU: https://nomnom-app.herokuapp.com/
 
 ## App Overview
