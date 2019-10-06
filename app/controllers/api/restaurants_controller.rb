@@ -7,7 +7,7 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        @restaurant = Restaurant.find params[:id]
+        @restaurant = Restaurant.find(params[:id])
         render json: @restaurant
     end
 
@@ -16,11 +16,12 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def destroy
-        @restaurant = Restaurant.find params[:id]
+        @restaurant = Restaurant.find(params[:id])
         @restaurant.destroy
     end
 
     private
+    
     def restaurant_params
         params.require(:restaurant).permit(:featuredPhoto, :venue_id, :name)
     end
