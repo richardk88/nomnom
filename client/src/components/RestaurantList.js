@@ -12,13 +12,9 @@ const Container = styled.div`
 `
 
 class RestaurantList extends Component {
-    constructor() {
-        super();
-        this.state = {
+   state = {
             error: ''
         }
-    }
-
     
     render() {
         const restaurantList = this.props.restaurants.map((restaurant, i) => {
