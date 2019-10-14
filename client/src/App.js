@@ -46,7 +46,6 @@ class App extends Component {
       }]
     });
       await this.setState ({ fourSquareData: res.data.response.groups[0].items});
-      console.log(res.data.response.groups[0].items)
       return res.data.response.groups[0].items;  
     }
     catch(err) {
